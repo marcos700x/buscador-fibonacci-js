@@ -6,7 +6,7 @@
   font-family: 'Roboto', sans-serif;
 }
 
-body, body .ui, .searchContainer button, .query {
+.top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,101 +22,102 @@ body, body .ui, .searchContainer button, .query {
           flex-direction: column;
 }
 
-body {
-  height: 100vh;
-  background-image: url(https://i.pinimg.com/originals/a0/42/5b/a0425b4d3a77461b74ea604295cedb65.png);
-  background-position: center;
-  background-size: cover;
-  gap: 100px;
-  overflow: hidden;
-}
-
-body .ui h1 {
-  color: #fff;
-  background: -webkit-gradient(linear, left top, right top, from(#00ffee), to(#027178));
-  background: linear-gradient(to right, #00ffee, #027178);
-  padding: 30px 60px;
-  border-radius: 20px;
-  font-size: 4rem;
-  -webkit-box-shadow: 5px 5px 10px #fff;
-          box-shadow: 5px 5px 10px #fff;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-h2 {
-  color: white;
-  margin-top: 20px;
-}
-
-.searchContainer {
-  margin-top: 20px;
+.top .searchContainer, .top .searchContainer button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.top {
+  height: 40vh;
+  position: relative;
+  color: #fff;
+  text-align: center;
   gap: 20px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#00000080), to(#00000080)), url("https://i.pinimg.com/originals/a0/42/5b/a0425b4d3a77461b74ea604295cedb65.png");
+  background-image: linear-gradient(#00000080, #00000080), url("https://i.pinimg.com/originals/a0/42/5b/a0425b4d3a77461b74ea604295cedb65.png");
+  background-size: cover;
+  background-position: center;
 }
 
-.searchContainer input {
-  padding: 10px 20px;
-  border-radius: 10px;
+.top h1 {
+  font-size: 4rem;
+}
+
+.top .searchContainer {
+  height: 2.5em;
+  position: absolute;
+  bottom: 0;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+.top .searchContainer input, .top .searchContainer button {
+  height: 100%;
   border: none;
-  font-size: 1.5rem;
-  max-width: 150px;
+  -webkit-box-shadow: 0px 3px 0px 3px #017981;
+          box-shadow: 0px 3px 0px 3px #017981;
 }
 
-.searchContainer input:focus {
+.top .searchContainer input {
+  border-radius: 30px 0 0 30px;
+  padding: 0 0 0 20px;
+  font-size: 1.2rem;
+  width: 50%;
+}
+
+.top .searchContainer input:focus {
   outline: none;
 }
 
-.searchContainer button {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  background: -webkit-gradient(linear, left top, right top, from(#00ffee), to(#027178));
-  background: linear-gradient(to right, #00ffee, #027178);
-  border: none;
+.top .searchContainer button {
+  padding: 0 20px;
+  border-radius: 0 30px 30px 0;
+  background-image: -webkit-gradient(linear, right top, left top, from(#A8BF95), to(#017981));
+  background-image: linear-gradient(to left, #A8BF95, #017981);
   cursor: pointer;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-}
-
-.searchContainer button:active {
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
 }
 
 .query {
-  opacity: 0;
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-  height: 200px;
-  width: 400px;
-  background-color: #fff;
-  border-radius: 20px;
-  -webkit-box-shadow: 4px 4px 10px;
-          box-shadow: 4px 4px 10px;
-  position: relative;
+  height: 60vh;
   padding: 20px;
-  gap: 20px;
 }
 
-.query span {
-  font-size: 2rem;
-  font-weight: 500;
+.query h1 {
+  font-size: 1.5rem;
+}
+
+.query .resultContainer {
+  max-width: 50vw;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  overflow-x: scroll;
+}
+
+.query .resultContainer::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.query .resultContainer::-webkit-scrollbar-thumb {
+  background-color: #222222;
+  border-radius: 8px;
+}
+
+.query .resultContainer span {
+  font-size: 1.1rem;
+  width: 300px;
+  overflow: hidden;
 }
 /*# sourceMappingURL=style.css.map */
